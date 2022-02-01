@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  php:
+    image: ilyes512/code-style/php/vscode:latest
+    entrypoint: ["sh", "-c", "trap : 15 ; sleep 9999d & wait"]
+    build:
+      context: .
+      dockerfile: .devcontainer/Dockerfile
+      args:
+        IMAGE_REPO_PHP: ${IMAGE_REPO_PHP:-ghcr.io/ilyes512/php81-fpm}
+        IMAGE_TAG_PHP_VSCODE: ${IMAGE_TAG_PHP_VSCODE:-vscode-latest}
+    volumes:
+      - $HOME/.ssh/known_hosts:/home/code/.ssh/known_hosts:ro
+      # - $HOME/auth.json:/root/auth.json:ro
+      - .:/workspace:delegated
+      - vscode-extensions:/home/code/.vscode-server/extensions
+
+volumes:
+  vscode-extensions:

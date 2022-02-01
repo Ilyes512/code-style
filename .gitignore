@@ -1,0 +1,5 @@
+.DS_Store
+/vendor
+/.phplint-cache
+/composer.lock
+/auth.json

@@ -1,0 +1,17 @@
+{
+    "name": "code-style",
+    "remoteUser": "code",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "php",
+    "workspaceFolder": "/workspace",
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+    },
+    "extensions": [
+        "bmewburn.vscode-intelephense-client",
+        "redhat.vscode-yaml",
+        "mehedidracula.php-namespace-resolver",
+        "editorconfig.editorconfig",
+        "mhutchie.git-graph"
+    ]
+}
