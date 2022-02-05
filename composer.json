@@ -24,8 +24,8 @@
         "checkall": [
             "@lint",
             "@checkstyle",
-            "composer outdated --minor-only --direct",
-            "composer outdated --minor-only --strict --strict"
+            "composer outdated --direct",
+            "composer outdated --direct --minor-only --strict"
         ]
     },
     "extra": {
