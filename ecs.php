@@ -49,6 +49,7 @@ use PhpCsFixer\Fixer\Whitespace\LineEndingFixer;
 use PhpCsFixer\Fixer\Whitespace\NoSpacesInsideParenthesisFixer;
 use PhpCsFixer\Fixer\Whitespace\NoTrailingWhitespaceFixer;
 use PhpCsFixer\Fixer\Whitespace\SingleBlankLineAtEofFixer;
+use SlevomatCodingStandard\Sniffs\Arrays\DisallowImplicitArrayCreationSniff;
 use SlevomatCodingStandard\Sniffs\Arrays\MultiLineArrayEndBracketPlacementSniff;
 use SlevomatCodingStandard\Sniffs\Arrays\SingleLineArrayWhitespaceSniff;
 use SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff;
@@ -63,32 +64,59 @@ use SlevomatCodingStandard\Sniffs\Classes\RequireConstructorPropertyPromotionSni
 use SlevomatCodingStandard\Sniffs\Classes\RequireMultiLineMethodSignatureSniff;
 use SlevomatCodingStandard\Sniffs\Classes\TraitUseDeclarationSniff;
 use SlevomatCodingStandard\Sniffs\Classes\UselessLateStaticBindingSniff;
+use SlevomatCodingStandard\Sniffs\Commenting\DocCommentSpacingSniff;
+use SlevomatCodingStandard\Sniffs\Commenting\ForbiddenAnnotationsSniff;
+use SlevomatCodingStandard\Sniffs\Commenting\InlineDocCommentDeclarationSniff;
 use SlevomatCodingStandard\Sniffs\ControlStructures\DisallowContinueWithoutIntegerOperandInSwitchSniff;
+use SlevomatCodingStandard\Sniffs\ControlStructures\EarlyExitSniff;
 use SlevomatCodingStandard\Sniffs\ControlStructures\JumpStatementsSpacingSniff;
 use SlevomatCodingStandard\Sniffs\ControlStructures\LanguageConstructWithParenthesesSniff;
+use SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullCoalesceEqualOperatorSniff;
+use SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullCoalesceOperatorSniff;
+use SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullSafeObjectOperatorSniff;
+use SlevomatCodingStandard\Sniffs\ControlStructures\RequireShortTernaryOperatorSniff;
 use SlevomatCodingStandard\Sniffs\Exceptions\DeadCatchSniff;
 use SlevomatCodingStandard\Sniffs\Exceptions\RequireNonCapturingCatchSniff;
+use SlevomatCodingStandard\Sniffs\Files\TypeNameMatchesFileNameSniff;
 use SlevomatCodingStandard\Sniffs\Functions\ArrowFunctionDeclarationSniff;
+use SlevomatCodingStandard\Sniffs\Functions\RequireArrowFunctionSniff;
 use SlevomatCodingStandard\Sniffs\Functions\RequireTrailingCommaInCallSniff;
 use SlevomatCodingStandard\Sniffs\Functions\RequireTrailingCommaInDeclarationSniff;
 use SlevomatCodingStandard\Sniffs\Functions\StaticClosureSniff;
+use SlevomatCodingStandard\Sniffs\Functions\StrictCallSniff;
 use SlevomatCodingStandard\Sniffs\Functions\UnusedInheritedVariablePassedToClosureSniff;
+use SlevomatCodingStandard\Sniffs\Functions\UnusedParameterSniff;
 use SlevomatCodingStandard\Sniffs\Functions\UselessParameterDefaultValueSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\DisallowGroupUseSniff;
+use SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedGlobalConstantsSniff;
+use SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedGlobalFunctionsSniff;
+use SlevomatCodingStandard\Sniffs\Namespaces\MultipleUsesPerLineSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceDeclarationSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespaceSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UselessAliasSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UseSpacingSniff;
 use SlevomatCodingStandard\Sniffs\Numbers\RequireNumericLiteralSeparatorSniff;
+use SlevomatCodingStandard\Sniffs\Operators\DisallowEqualOperatorsSniff;
+use SlevomatCodingStandard\Sniffs\PHP\DisallowDirectMagicInvokeCallSniff;
 use SlevomatCodingStandard\Sniffs\PHP\OptimizedFunctionsWithoutUnpackingSniff;
 use SlevomatCodingStandard\Sniffs\PHP\ShortListSniff;
+use SlevomatCodingStandard\Sniffs\PHP\TypeCastSniff;
+use SlevomatCodingStandard\Sniffs\PHP\UselessParenthesesSniff;
 use SlevomatCodingStandard\Sniffs\PHP\UselessSemicolonSniff;
+use SlevomatCodingStandard\Sniffs\TypeHints\DisallowArrayTypeHintSyntaxSniff;
+use SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHintsSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValueSniff;
+use SlevomatCodingStandard\Sniffs\TypeHints\NullTypeHintOnLastPositionSniff;
+use SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff;
+use SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff;
+use SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSpacingSniff;
+use SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\UnionTypeHintFormatSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\UselessConstantTypeHintSniff;
 use SlevomatCodingStandard\Sniffs\Variables\DisallowSuperGlobalVariableSniff;
+use SlevomatCodingStandard\Sniffs\Variables\DuplicateAssignmentToVariableSniff;
 use SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff;
 use SlevomatCodingStandard\Sniffs\Variables\UselessVariableSniff;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
@@ -248,7 +276,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     // Custom Slevomat Cleaning (Dead Code detection)
     $services->set(UnusedInheritedVariablePassedToClosureSniff::class);
     $services->set(UselessParameterDefaultValueSniff::class);
-    $services->set(UnusedUsesSniff::class);
+    // NOTE: Can be replaced with SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly which has more config options
+    $services->set(UnusedUsesSniff::class)
+        ->property('searchAnnotations', true);
     $services->set(UseFromSameNamespaceSniff::class);
     $services->set(UselessAliasSniff::class);
     $services->set(OptimizedFunctionsWithoutUnpackingSniff::class);
@@ -294,6 +324,45 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(NullableTypeForNullDefaultValueSniff::class);
     $services->set(DisallowGroupUseSniff::class);
     $services->set(PropertyTypeHintSpacingSniff::class);
+
+    // New funtional slevomat rules
+    $services->set(ParameterTypeHintSniff::class);
+    $services->set(PropertyTypeHintSniff::class);
+    $services->set(ReturnTypeHintSniff::class);
+    $services->set(RequireNonCapturingCatchSniff::class);
+    $services->set(DisallowImplicitArrayCreationSniff::class);
+    $services->set(RequireNullCoalesceOperatorSniff::class);
+    $services->set(RequireNullCoalesceEqualOperatorSniff::class);
+    $services->set(EarlyExitSniff::class);
+    $services->set(StrictCallSniff::class);
+    $services->set(DisallowDirectMagicInvokeCallSniff::class);
+    $services->set(DisallowEqualOperatorsSniff::class);
+
+    // New clean slevomat rules
+    $services->set(UnusedParameterSniff::class);
+    $services->set(UselessParenthesesSniff::class);
+    $services->set(DuplicateAssignmentToVariableSniff::class)
+        ->property('ignoreUnusedValuesWhenOnlyKeysAreUsedInForeach', true);
+
+    // New formatting slevomat rules https://github.com/slevomat/coding-standard#formatting---rules-for-consistent-code-looks
+    $services->set(RequireNullSafeObjectOperatorSniff::class);
+    $services->set(RequireShortTernaryOperatorSniff::class);
+    $services->set(RequireArrowFunctionSniff::class);
+    $services->set(DisallowArrayTypeHintSyntaxSniff::class);
+    $services->set(LongTypeHintsSniff::class);
+    $services->set(NullTypeHintOnLastPositionSniff::class);
+    $services->set(TypeCastSniff::class);
+    $services->set(TypeNameMatchesFileNameSniff::class);
+    $services->set(ParameterTypeHintSpacingSniff::class);
+    $services->set(FullyQualifiedGlobalConstantsSniff::class);
+    $services->set(FullyQualifiedGlobalFunctionsSniff::class);
+    $services->set(MultipleUsesPerLineSniff::class);
+    $services->set(ForbiddenAnnotationsSniff::class)
+        ->property('forbiddenAnnotations', ['@author', '@created', '@version', '@package', '@copyright']);
+    $services->set(DocCommentSpacingSniff::class);
+    $services->set(InlineDocCommentDeclarationSniff::class)
+        ->property('allowDocCommentAboveReturn', true)
+        ->property('allowAboveNonAssignment', true);
 
     $containerConfigurator
         ->parameters()
