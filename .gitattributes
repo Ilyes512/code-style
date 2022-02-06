@@ -8,5 +8,4 @@
 /.gitignore                     export-ignore
 /docker-compose.yml             export-ignore
 /ecs-local.php                  export-ignore
-/ecs.php                        export-ignore
 /Taskfile.yml                   export-ignore
