@@ -77,7 +77,6 @@ use SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullSafeObjectOperato
 use SlevomatCodingStandard\Sniffs\ControlStructures\RequireShortTernaryOperatorSniff;
 use SlevomatCodingStandard\Sniffs\Exceptions\DeadCatchSniff;
 use SlevomatCodingStandard\Sniffs\Exceptions\RequireNonCapturingCatchSniff;
-use SlevomatCodingStandard\Sniffs\Files\TypeNameMatchesFileNameSniff;
 use SlevomatCodingStandard\Sniffs\Functions\ArrowFunctionDeclarationSniff;
 use SlevomatCodingStandard\Sniffs\Functions\RequireArrowFunctionSniff;
 use SlevomatCodingStandard\Sniffs\Functions\RequireTrailingCommaInCallSniff;
@@ -352,7 +351,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(LongTypeHintsSniff::class);
     $services->set(NullTypeHintOnLastPositionSniff::class);
     $services->set(TypeCastSniff::class);
-    $services->set(TypeNameMatchesFileNameSniff::class);
     $services->set(ParameterTypeHintSpacingSniff::class);
     $services->set(FullyQualifiedGlobalConstantsSniff::class);
     $services->set(FullyQualifiedGlobalFunctionsSniff::class);
