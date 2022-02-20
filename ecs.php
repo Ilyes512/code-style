@@ -91,6 +91,7 @@ use SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedGlobalConstantsSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedGlobalFunctionsSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\MultipleUsesPerLineSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceDeclarationSniff;
+use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceSpacingSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespaceSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UselessAliasSniff;
@@ -315,6 +316,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(RequireTrailingCommaInCallSniff::class);
     $services->set(RequireTrailingCommaInDeclarationSniff::class);
     $services->set(NamespaceDeclarationSniff::class);
+    $services->set(NamespaceSpacingSniff::class);
     $services->set(UseSpacingSniff::class);
     $services->set(RequireNumericLiteralSeparatorSniff::class)
         ->property('minDigitsBeforeDecimalPoint', 6);
