@@ -359,7 +359,12 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(MultipleUsesPerLineSniff::class);
     $services->set(ForbiddenAnnotationsSniff::class)
         ->property('forbiddenAnnotations', ['@author', '@created', '@version', '@package', '@copyright']);
-    $services->set(DocCommentSpacingSniff::class);
+    $services->set(DocCommentSpacingSniff::class)
+        ->property('annotationsGroups', [
+            '@var',
+            '@param',
+            '@return',
+        ]);
     $services->set(InlineDocCommentDeclarationSniff::class)
         ->property('allowDocCommentAboveReturn', true)
         ->property('allowAboveNonAssignment', true);
