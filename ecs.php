@@ -90,6 +90,7 @@ use SlevomatCodingStandard\Sniffs\Namespaces\DisallowGroupUseSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\MultipleUsesPerLineSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceDeclarationSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceSpacingSniff;
+use SlevomatCodingStandard\Sniffs\Namespaces\ReferenceUsedNamesOnlySniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespaceSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UselessAliasSniff;
@@ -274,7 +275,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     // Custom Slevomat Cleaning (Dead Code detection)
     $services->set(UnusedInheritedVariablePassedToClosureSniff::class);
     $services->set(UselessParameterDefaultValueSniff::class);
-    // NOTE: Can be replaced with SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly which has more config options
+    $services->set(ReferenceUsedNamesOnlySniff::class)
+        ->property('searchAnnotations', true);
     $services->set(UnusedUsesSniff::class)
         ->property('searchAnnotations', true);
     $services->set(UseFromSameNamespaceSniff::class);
