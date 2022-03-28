@@ -87,8 +87,6 @@ use SlevomatCodingStandard\Sniffs\Functions\UnusedInheritedVariablePassedToClosu
 use SlevomatCodingStandard\Sniffs\Functions\UnusedParameterSniff;
 use SlevomatCodingStandard\Sniffs\Functions\UselessParameterDefaultValueSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\DisallowGroupUseSniff;
-use SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedGlobalConstantsSniff;
-use SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedGlobalFunctionsSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\MultipleUsesPerLineSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceDeclarationSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceSpacingSniff;
@@ -354,8 +352,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(NullTypeHintOnLastPositionSniff::class);
     $services->set(TypeCastSniff::class);
     $services->set(ParameterTypeHintSpacingSniff::class);
-    $services->set(FullyQualifiedGlobalConstantsSniff::class);
-    $services->set(FullyQualifiedGlobalFunctionsSniff::class);
+    // $services->set(FullyQualifiedGlobalConstantsSniff::class);
+    // $services->set(FullyQualifiedGlobalFunctionsSniff::class);
     $services->set(MultipleUsesPerLineSniff::class);
     $services->set(ForbiddenAnnotationsSniff::class)
         ->property('forbiddenAnnotations', ['@author', '@created', '@version', '@package', '@copyright']);
