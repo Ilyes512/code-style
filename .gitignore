@@ -1,5 +1,11 @@
+!.env
 .DS_Store
-/vendor
-/.phplint-cache
+/dev
 /composer.lock
+/vendor
+/phpstan.neon
+/phpunit.xml
+/.phpunit-cache
+/.phplint-cache
 /auth.json
+Taskfile.yml

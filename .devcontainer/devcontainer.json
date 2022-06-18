@@ -5,13 +5,14 @@
     "service": "php",
     "workspaceFolder": "/workspace",
     "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.defaultProfile.linux": "bash"
     },
+    // "shutdownAction": "none",
     "extensions": [
         "bmewburn.vscode-intelephense-client",
         "redhat.vscode-yaml",
         "mehedidracula.php-namespace-resolver",
-        "editorconfig.editorconfig",
+        "EditorConfig.EditorConfig",
         "mhutchie.git-graph"
     ]
 }
