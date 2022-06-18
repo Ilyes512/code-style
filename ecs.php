@@ -232,6 +232,8 @@ return static function (ECSConfig $containerConfigurator): void {
         ->property('groups', [
             'uses',
 
+            'enum cases',
+
             'public constants',
             'protected constants',
             'private constants',
