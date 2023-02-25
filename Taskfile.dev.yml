@@ -73,5 +73,5 @@ tasks:
       - rm -rf
         vendor
         composer.lock
-        .phplint-cache
+        .phplint.cache
         && printf "%s\n" "Successfully removed vendor/generated files..."

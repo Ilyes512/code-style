@@ -4,14 +4,19 @@
     "dockerComposeFile": ["../docker-compose.yml"],
     "service": "php",
     "workspaceFolder": "/workspace",
-    "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash",
-    },
-    "extensions": [
-        "bmewburn.vscode-intelephense-client",
-        "redhat.vscode-yaml",
-        "mehedidracula.php-namespace-resolver",
-        "editorconfig.editorconfig",
-        "mhutchie.git-graph"
-    ]
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+            "extensions": [
+                "bmewburn.vscode-intelephense-client",
+                "redhat.vscode-yaml",
+                "mehedidracula.php-namespace-resolver",
+                "EditorConfig.EditorConfig",
+                "mhutchie.git-graph"
+            ]
+        }
+    }
 }

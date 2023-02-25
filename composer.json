@@ -11,11 +11,11 @@
     "license": "MIT",
     "require": {
         "php": "^7.4 || ^8.0",
-        "slevomat/coding-standard": "^7.0",
-        "symplify/easy-coding-standard": "^10.0"
+        "slevomat/coding-standard": "^8.0",
+        "symplify/easy-coding-standard": "^11.0"
     },
     "require-dev": {
-        "overtrue/phplint": "^4.1"
+        "overtrue/phplint": "^9.0.4"
     },
     "scripts": {
         "lint": "XDEBUG_MODE=off phplint --exclude=vendor .",
