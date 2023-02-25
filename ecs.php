@@ -228,7 +228,6 @@ return static function (ECSConfig $containerConfigurator): void {
         ->property('nullPosition', 'last');
     $services->set(RequireNonCapturingCatchSniff::class);
     $services->set(ClassStructureSniff::class)
-        ->property('enableFinalMethods', true)
         ->property('groups', [
             'uses',
 
@@ -314,7 +313,7 @@ return static function (ECSConfig $containerConfigurator): void {
     $services->set(JumpStatementsSpacingSniff::class);
     $services->set(LanguageConstructWithParenthesesSniff::class);
     $services->set(ArrowFunctionDeclarationSniff::class)
-        ->property('allowMultiline', true);
+        ->property('allowMultiLine', true);
     $services->set(RequireTrailingCommaInCallSniff::class);
     $services->set(RequireTrailingCommaInDeclarationSniff::class);
     $services->set(NamespaceDeclarationSniff::class);
@@ -344,8 +343,7 @@ return static function (ECSConfig $containerConfigurator): void {
     // New clean slevomat rules
     $services->set(UnusedParameterSniff::class);
     $services->set(UselessParenthesesSniff::class);
-    $services->set(DuplicateAssignmentToVariableSniff::class)
-        ->property('ignoreUnusedValuesWhenOnlyKeysAreUsedInForeach', true);
+    $services->set(DuplicateAssignmentToVariableSniff::class);
 
     // New formatting slevomat rules https://github.com/slevomat/coding-standard#formatting---rules-for-consistent-code-looks
     $services->set(RequireNullSafeObjectOperatorSniff::class);

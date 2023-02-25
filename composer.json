@@ -15,7 +15,7 @@
         "symplify/easy-coding-standard": "^11.0"
     },
     "require-dev": {
-        "overtrue/phplint": "^5.0"
+        "overtrue/phplint": "^9.0.4"
     },
     "scripts": {
         "lint": "XDEBUG_MODE=off phplint --exclude=vendor .",
