@@ -15,8 +15,6 @@
 /ecs-local.php              export-ignore
 /phpstan.neon               export-igore
 /phpstan.dist.neon          export-ignore
-/phpunit.xml                export-ignore
-/phpunit.xml.dist           export-ignore
 /Taskfile.dist.yml          export-ignore
 /Taskfile.yml               export-ignore
-/docker-compose.yml         export-ignore
+/compose.yml                export-ignore

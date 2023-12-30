@@ -1,0 +1,73 @@
+version: "3"
+
+dotenv: ['.env']
+
+silent: true
+
+tasks:
+
+  c:update:
+    desc: Run composer update
+    cmds:
+      - task: c:exec
+        vars: { SUBCMD: update }
+
+  c:install:
+    desc: Run composer install
+    cmds:
+      - task: c:exec
+        vars: { SUBCMD: install }
+
+  c:exec:
+    desc: Run composer update or install
+    internal: true
+    preconditions:
+      - sh: test '{{.SUBCMD}}' = 'install' -o '{{.SUBCMD}}' = 'update'
+        msg: SUBCMD value needs to be either 'install' or 'update'
+    cmds:
+      - docker volume create php_composer_cache
+      - docker run
+        --interactive
+        --tty
+        --rm
+        --volume "$(pwd)":/var/www
+        --volume php_composer_cache:/home/composer/.composer
+        --entrypoint ''
+        -e COMPOSER_HOME=/home/composer/.composer
+        $IMAGE_REPO_PHP:$IMAGE_TAG_PHP_BUILDER
+        composer {{.SUBCMD}}
+        --no-progress
+        --prefer-dist
+        --ignore-platform-reqs
+
+  stop:
+    desc: Stop Devcontainer
+    cmds:
+      - docker compose stop
+
+  down:
+    desc: Cleanup Devcontainer including volumes
+    cmds:
+      - docker compose down --volumes
+
+  cleanup:
+    desc: Cleanup of almost all gitignored files and untracked files
+    prompt: This could potentially delete untracked files!! Do you want to continue?
+    summary: |
+      Cleanup of almost all gitignored files, untracked files and development containers.
+
+      The following files/dirs are excluded:
+        - /.idea
+        - /.vscode
+    cmds:
+      - git clean
+        -xd
+        --force
+        --exclude .idea
+        --exclude .vscode
+
+  cleanup:all:
+    desc: Cleanup of almost all gitignored files, untracked files and removal of development containers
+    cmds:
+      - task: down
+      - task: cleanup
