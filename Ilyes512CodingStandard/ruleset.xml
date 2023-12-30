@@ -9,6 +9,7 @@
     <arg value="s"/><!-- Show sniff codes in all reports -->
     <arg value="p"/><!-- Show progress of the run -->
     <arg name="colors"/><!-- Use colors in output -->
+    <arg name="extensions" value="php"/>
 
     <rule ref="PSR12"/>
 </ruleset>
