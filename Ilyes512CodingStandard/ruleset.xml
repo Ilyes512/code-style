@@ -22,6 +22,12 @@
     <rule ref="Generic.NamingConventions.UpperCaseConstantName"/>
     <!-- PSR1 END -->
 
+    <!-- PSR1-EXTRA START -->
+    <rule ref="PSR1.Files.SideEffects.FoundWithSymbols"/>
+    <rule ref="PSR1.Classes.ClassDeclaration"/>
+    <rule ref="PSR1.Methods.CamelCapsMethodName"/>
+    <!-- PSR1-EXTRA END -->
+
     <!-- PSR12 START -->
     <rule ref="Generic.Files.LineEndings">
         <properties>
@@ -120,4 +126,22 @@
     <rule ref="Generic.WhiteSpace.IncrementDecrementSpacing"/>
     <rule ref="Squiz.WhiteSpace.CastSpacing"/>
     <!-- PSR12 END -->
+
+    <!-- PSR12-EXTRA START -->
+    <rule ref="PSR12.Keywords.ShortFormTypeKeywords"/>
+    <rule ref="PSR12.Files.ImportStatement"/>
+    <rule ref="PSR12.Files.DeclareStatement"/>
+    <rule ref="PSR12.Classes.ClosingBrace"/>
+    <rule ref="PSR12.Classes.OpeningBraceSpace"/>
+    <rule ref="PSR12.Traits.UseDeclaration"/>
+    <rule ref="PSR12.Properties.ConstantVisibility"/>
+    <rule ref="PSR12.Functions.ReturnTypeDeclaration"/>
+    <rule ref="PSR12.Functions.NullableTypeDeclaration"/>
+    <rule ref="PSR12.ControlStructures.ControlStructureSpacing"/>
+    <rule ref="PSR12.ControlStructures.BooleanOperatorPlacement"/>
+    <rule ref="Squiz.ControlStructures.ControlSignature"/>
+    <rule ref="PSR12.Operators.OperatorSpacing"/>
+    <rule ref="PSR12.Functions.ReturnTypeDeclaration"/>
+    <rule ref="PSR12.Classes.AnonClassDeclaration"/>
+    <!-- PSR12-EXTRA END -->
 </ruleset>
