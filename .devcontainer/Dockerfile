@@ -8,7 +8,7 @@ ARG USER_GID=$USER_UID
 ARG WORKSPACE_PATH=/workspace
 
 RUN groupadd --gid "$USER_GID" "$USERNAME" \
-    && useradd --uid "$USER_UID" --gid "$USER_GID" --create-home "$USERNAME" \
+    && useradd --uid "$USER_UID" --gid "$USER_GID" --create-home "$USERNAME" --shell /bin/bash \
     && mkdir -p \
         "$WORKSPACE_PATH" \
         "/home/$USERNAME/.vscode-server/extensions" \

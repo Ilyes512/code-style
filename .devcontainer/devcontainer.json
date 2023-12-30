@@ -1,7 +1,7 @@
 {
     "name": "code-style",
     "remoteUser": "code",
-    "dockerComposeFile": ["../docker-compose.yml"],
+    "dockerComposeFile": ["../compose.yml"],
     "service": "php",
     "workspaceFolder": "/workspace",
     "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
@@ -18,5 +18,9 @@
                 "mhutchie.git-graph"
             ]
         }
+    },
+    "features": {
+        "ghcr.io/devcontainers-contrib/features/go-task:1": {},
+        "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
     }
 }

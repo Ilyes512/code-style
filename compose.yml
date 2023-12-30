@@ -1,4 +1,6 @@
-version: "3.7"
+volumes:
+  vscode-extensions:
+
 services:
   php:
     image: ${COMPOSE_PROJECT_NAME}-php-vscode:latest
@@ -14,6 +16,3 @@ services:
       # - $HOME/auth.json:/root/auth.json:ro
       - .:/workspace:delegated
       - vscode-extensions:/home/code/.vscode-server/extensions
-
-volumes:
-  vscode-extensions:
