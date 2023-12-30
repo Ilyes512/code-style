@@ -6,9 +6,9 @@
 >
     <description>ilyes512/code-style ruleset</description>
 
-    <arg value="s" /><!-- Show sniff codes in all reports -->
-    <arg value="p" /><!-- Show progress of the run -->
-    <arg name="colors" /><!-- Use colors in output -->
+    <arg value="s"/><!-- Show sniff codes in all reports -->
+    <arg value="p"/><!-- Show progress of the run -->
+    <arg name="colors"/><!-- Use colors in output -->
 
     <rule ref="PSR12"/>
 </ruleset>
