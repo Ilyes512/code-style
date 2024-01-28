@@ -12,7 +12,6 @@
 /.gitignore                 export-ignore
 /.vsls.json                 export-ignore
 /auth.json                  export-ignore
-/ecs-local.php              export-ignore
 /phpstan.neon               export-igore
 /phpstan.dist.neon          export-ignore
 /Taskfile.dist.yml          export-ignore
