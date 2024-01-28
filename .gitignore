@@ -7,3 +7,5 @@
 /.phplint.cache
 /auth.json
 Taskfile.yml
+docs.html
+/temp

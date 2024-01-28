@@ -21,6 +21,14 @@
             "dev-version-2": "2.0-dev"
         }
     },
+    "scripts": {
+        "docs": "phpcs --standard=PSR12 --generator=html > docs.html",
+        "listsniffs": "phpcs --standard=./Ilyes512CodingStandard/ruleset.xml -e"
+    },
+    "scripts-descriptions": {
+        "docs": "Generate the PSR12 documentation",
+        "listsniffs": "List all sniffs used by Ilyes512CodingStandard"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
