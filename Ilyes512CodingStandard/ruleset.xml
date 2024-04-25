@@ -144,4 +144,8 @@
     <rule ref="PSR12.Functions.ReturnTypeDeclaration"/>
     <rule ref="PSR12.Classes.AnonClassDeclaration"/>
     <!-- PSR12-EXTRA END -->
+
+    <!-- CUSTOM string rules-->
+    <rule ref="Squiz.Strings.DoubleQuoteUsage.NotRequired"/>
+    <!-- CUSTOM rules-->
 </ruleset>
