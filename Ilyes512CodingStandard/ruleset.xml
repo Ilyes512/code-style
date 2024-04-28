@@ -145,14 +145,42 @@
     <rule ref="PSR12.Classes.AnonClassDeclaration"/>
     <!-- PSR12-EXTRA END -->
 
-    <!-- CUSTOM STRING RULES START-->
+    <!-- CUSTOM STRING RULES START -->
     <rule ref="Squiz.Strings.DoubleQuoteUsage.NotRequired"/>
-    <!-- CUSTOM STRING RULES END-->
+    <!-- CUSTOM STRING RULES END -->
 
-    <!-- CUSTOM TRAILING COMMA RULES START-->
+    <!-- CUSTOM TRAILING COMMA RULES START -->
     <rule ref="SlevomatCodingStandard.Arrays.TrailingArrayComma"/>
     <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInCall"/>
     <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInClosureUse"/>
     <rule ref="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration"/>
-    <!-- CUSTOM TRAILING COMMA RULES END-->
+    <!-- CUSTOM TRAILING COMMA RULES END -->
+
+    <!-- CUSTOM NAMESPACES RULES START -->
+    <rule ref="SlevomatCodingStandard.Namespaces.AlphabeticallySortedUses">
+        <properties>
+            <property name="caseSensitive" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.NamespaceDeclaration"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.NamespaceSpacing"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
+        <properties>
+            <property name="searchAnnotations" value="true"/>
+            <!-- <property name="allowFallbackGlobalFunctions" value="false"/> -->
+            <!-- <property name="allowFallbackGlobalConstants" value="false"/> -->
+            <property name="allowPartialUses" value="false"/>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.UseSpacing"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
+        <properties>
+            <property name="searchAnnotations" value="true"/>
+        </properties>
+    </rule>
+    <!-- CUSTOM NAMESPACES RULES END -->
 </ruleset>
