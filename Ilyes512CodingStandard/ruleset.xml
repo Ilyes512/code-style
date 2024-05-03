@@ -187,4 +187,12 @@
         </properties>
     </rule>
     <!-- CUSTOM NAMESPACES RULES END -->
+
+    <!-- CUSTOM TYPE HINTS RULES START -->
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="spacesCountAroundEqualsSign" value="0"/>
+        </properties>
+    </rule>
+    <!-- CUSTOM TYPE HINTS RULES START -->
 </ruleset>
