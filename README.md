@@ -28,15 +28,15 @@ Add a `phpcs.xml` file to the root of your project. The below config example is 
     <arg value="p"/> <!-- Show progress in report -->
 
     <file>.</file>
-    <exclude-pattern>./vendor</exclude-pattern>
-    <exclude-pattern>./node_modules</exclude-pattern>
-    <exclude-pattern>./.phpstan.cache</exclude-pattern>
-    <exclude-pattern>./.phpunit.cache</exclude-pattern>
-    <exclude-pattern>./bootstrap/cache</exclude-pattern>
-    <exclude-pattern>./storage/framework</exclude-pattern>
-    <exclude-pattern>./resources/css</exclude-pattern>
-    <exclude-pattern>./resources/js</exclude-pattern>
-    <exclude-pattern>./coverage</exclude-pattern>
+    <exclude-pattern>vendor</exclude-pattern>
+    <exclude-pattern>node_modules</exclude-pattern>
+    <exclude-pattern>.phpstan.cache</exclude-pattern>
+    <exclude-pattern>.phpunit.cache</exclude-pattern>
+    <exclude-pattern>bootstrap/cache</exclude-pattern>
+    <exclude-pattern>storage/framework</exclude-pattern>
+    <exclude-pattern>resources/css</exclude-pattern>
+    <exclude-pattern>resources/js</exclude-pattern>
+    <exclude-pattern>coverage</exclude-pattern>
 
     <rule ref="Ilyes512CodingStandard"/>
 </ruleset>
