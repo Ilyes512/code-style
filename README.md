@@ -7,36 +7,55 @@ An ECS (Easy Coding Standards) codestyle package.
 You can install the package via composer:
 
 ```bash
-composer require --dev ilyes512/code-style
+composer require --dev ilyes512/code-style:^2.0-dev
 ```
 
 ## Usage
 
-Add a `ecs.php` file to the root of your project with the below contents.
+Add a `phpcs.xml` file to the root of your project. The below config example is for a Laravel project:
 
-`ecs.php`:
+`phpcs.yml`:
 
-```php
-<?php
+```xml
+<?xml version="1.0"?>
+<ruleset>
+    <description>A Laravel project coding standard</description>
 
-declare(strict_types=1);
+    <arg name="extensions" value="php" />
+    <arg name="report" value="full"/>
+    <arg name="colors"/>
+    <arg value="s"/> <!-- Show sniff codes in report -->
+    <arg value="p"/> <!-- Show progress in report -->
 
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symplify\EasyCodingStandard\ValueObject\Option;
+    <rule ref="Ilyes512CodingStandard"/>
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(__DIR__ . '/vendor/ilyes512/code-style/ecs.php');
-
-    $containerConfigurator
-        ->parameters()
-        ->set(
-            Option::PATHS,
-            [
-                __DIR__ . '/src',
-                __DIR__ . '/config',
-                __DIR__ . '/tests',
-                __DIR__ . '/ecs.php',
-            ],
-        );
-};
+    <file>.</file>
+    <exclude-pattern>./vendor</exclude-pattern>
+    <exclude-pattern>./node_modules</exclude-pattern>
+    <exclude-pattern>./.phpstan.cache</exclude-pattern>
+    <exclude-pattern>./.phpunit.cache</exclude-pattern>
+    <exclude-pattern>./bootstrap/cache</exclude-pattern>
+    <exclude-pattern>./storage/framework</exclude-pattern>
+    <exclude-pattern>./resources/css</exclude-pattern>
+    <exclude-pattern>./resources/js</exclude-pattern>
+    <exclude-pattern>./coverage</exclude-pattern>
+</ruleset>
 ```
+
+## Using the PHPCSStandards plugin
+
+The above config assumes you allowed installing the [PHP_CodeSniffer](https://github.com/PHPCSStandards/composer-installer) plugin. Composer will prompt you to install it when you install this package. If you didn't, you can allow it by adding the following to your composer.json:
+
+```json
+{
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
+```
+
+## Annotated ruleset
+
+The [annotated ruleset](https://github.com/squizlabs/PHP_CodeSniffer/wiki/Annotated-Ruleset).
