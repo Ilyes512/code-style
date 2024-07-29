@@ -7,7 +7,7 @@ An ECS (Easy Coding Standards) codestyle package.
 You can install the package via composer:
 
 ```bash
-composer require --dev ilyes512/code-style:^2.0-dev
+composer require --dev ilyes512/code-style:^2.0
 ```
 
 ## Usage
@@ -27,8 +27,6 @@ Add a `phpcs.xml` file to the root of your project. The below config example is 
     <arg value="s"/> <!-- Show sniff codes in report -->
     <arg value="p"/> <!-- Show progress in report -->
 
-    <rule ref="Ilyes512CodingStandard"/>
-
     <file>.</file>
     <exclude-pattern>./vendor</exclude-pattern>
     <exclude-pattern>./node_modules</exclude-pattern>
@@ -39,6 +37,8 @@ Add a `phpcs.xml` file to the root of your project. The below config example is 
     <exclude-pattern>./resources/css</exclude-pattern>
     <exclude-pattern>./resources/js</exclude-pattern>
     <exclude-pattern>./coverage</exclude-pattern>
+
+    <rule ref="Ilyes512CodingStandard"/>
 </ruleset>
 ```
 
