@@ -15,12 +15,6 @@
         "slevomat/coding-standard": "^8.0",
         "squizlabs/php_codesniffer": "^3.0"
     },
-    "extra": {
-        "branch-alias": {
-            "dev-main": "1.0-dev",
-            "dev-version-2": "2.0-dev"
-        }
-    },
     "scripts": {
         "docs": "phpcs --standard=PSR12 --generator=html > docs.html",
         "listsniffs": "phpcs --standard=./Ilyes512CodingStandard/ruleset.xml -e"
