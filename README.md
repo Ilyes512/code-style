@@ -44,7 +44,9 @@ Add a `phpcs.xml` file to the root of your project. The below config example is 
 
 ## Using the PHPCSStandards plugin
 
-The above config assumes you allowed installing the [PHP_CodeSniffer](https://github.com/PHPCSStandards/composer-installer) plugin. Composer will prompt you to install it when you install this package. If you didn't, you can allow it by adding the following to your composer.json:
+The above config assumes you allowed installing the
+[PHP_CodeSniffer](https://github.com/PHPCSStandards/composer-installer) plugin. Composer will prompt you to install it
+when you install this package. If you didn't, you can allow it by adding the following to your composer.json:
 
 ```json
 {
