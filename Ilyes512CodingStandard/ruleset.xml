@@ -191,4 +191,8 @@
         </properties>
     </rule>
     <!-- CUSTOM TYPE HINTS RULES START -->
+
+    <!-- CUSTOM COMMENTING RULES START-->
+    <rule ref="SlevomatCodingStandard.Commenting.DocCommentSpacing"/>
+    <!-- CUSTOM COMMENTING RULES END -->
 </ruleset>
