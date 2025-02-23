@@ -1,11 +1,17 @@
 !.env
 .DS_Store
+/coverage
 /dev
 /composer.lock
 /vendor
 /phpstan.neon
+/phpunit.xml
+/.phpunit.cache
+/.phpunit.result.cache
 /.phplint.cache
+/.phpstan.cache
 /auth.json
 Taskfile.yml
+
+# Custom
 docs.html
-/temp
