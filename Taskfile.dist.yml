@@ -5,7 +5,7 @@ dotenv: ['.env']
 
 vars:
   # Latatest version of Markdownlint: https://hub.docker.com/r/davidanson/markdownlint-cli2/tags or https://github.com/DavidAnson/markdownlint-cli2/tags
-  MARKDOWNLINT_VERSION: v0.16.0
+  MARKDOWNLINT_VERSION: v0.19.0
   LOCAL_PWD:
     sh: echo ${LOCAL_WORKSPACE_FOLDER:-$(pwd)}
 
