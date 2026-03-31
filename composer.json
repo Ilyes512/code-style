@@ -1,5 +1,5 @@
 {
-    "name": "ilyes512/code-style",
+    "name": "specsnl/code-style",
     "type": "phpcodesniffer-standard",
     "description": "An PHP_CodeSniffer codestyle package.",
     "keywords": [
@@ -17,11 +17,11 @@
     },
     "scripts": {
         "docs": "phpcs --standard=PSR12 --generator=html > docs.html",
-        "listsniffs": "phpcs --standard=./Ilyes512CodingStandard/ruleset.xml -e"
+        "listsniffs": "phpcs --standard=./SpecsCodingStandard/ruleset.xml -e"
     },
     "scripts-descriptions": {
         "docs": "Generate the PSR12 documentation",
-        "listsniffs": "List all sniffs used by Ilyes512CodingStandard"
+        "listsniffs": "List all sniffs used by SpecsCodingStandard"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
