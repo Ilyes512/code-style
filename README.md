@@ -1,4 +1,4 @@
-# ilyes512/code-style
+# specsnl/code-style
 
 An ECS (Easy Coding Standards) codestyle package.
 
@@ -7,7 +7,7 @@ An ECS (Easy Coding Standards) codestyle package.
 You can install the package via composer:
 
 ```bash
-composer require --dev ilyes512/code-style:^2.0
+composer require --dev specsnl/code-style:^2.0
 ```
 
 ## Usage
@@ -38,7 +38,7 @@ Add a `phpcs.xml` file to the root of your project. The below config example is 
     <exclude-pattern>resources/js</exclude-pattern>
     <exclude-pattern>coverage</exclude-pattern>
 
-    <rule ref="Ilyes512CodingStandard"/>
+    <rule ref="SpecsCodingStandard"/>
 </ruleset>
 ```
 
