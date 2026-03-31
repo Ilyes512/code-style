@@ -7,7 +7,7 @@ An ECS (Easy Coding Standards) codestyle package.
 You can install the package via composer:
 
 ```bash
-composer require --dev specsnl/code-style:^2.0
+composer require --dev specsnl/code-style
 ```
 
 ## Usage
